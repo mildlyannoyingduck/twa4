@@ -1,0 +1,522 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+  }
+
+  button,
+  [role="button"],
+  a,
+  input[type="range"] {
+    touch-action: manipulation;
+  }
+
+  input[type="range"] {
+    touch-action: pan-x;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-brand {
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+/* =====================================================================
+ * v2.2.1 ARCTIC PRISM MAX GALAXY A07 ENGINE (Dynamic 0–100% Transparency)
+ * 0% Transparency = Solid High-Contrast Cards | 100% = Crystal Clear Frames
+ * ===================================================================== */
+
+:root {
+  --glass-transparency: 72;
+  --glass-alpha: 0.292;
+  --glass-alpha-low: 0.273;
+  --glass-dark-alpha: 0.289;
+  --glass-dark-alpha-low: 0.268;
+  --glass-subj-alpha: 0.296;
+  --glass-subj-alpha-low: 0.259;
+  --glass-control-light: 0.335;
+  --glass-control-dark: 0.304;
+  --glass-chrome-light: 0.292;
+  --glass-chrome-light-low: 0.273;
+  --glass-chrome-dark: 0.289;
+  --glass-chrome-dark-low: 0.268;
+  --glass-modal-light: 0.460;
+  --glass-modal-light-low: 0.360;
+  --glass-modal-dark: 0.500;
+  --glass-modal-dark-low: 0.400;
+  --glass-border-light: 0.802;
+  --glass-border-dark: 0.490;
+}
+
+.arctic-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.46) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.46) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.dark .arctic-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(56, 189, 248, 0.22) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.22) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.transit-hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(56, 189, 248, 0.14),
+    rgba(56, 189, 248, 0.14) 6px,
+    rgba(255, 255, 255, 0.04) 6px,
+    rgba(255, 255, 255, 0.04) 12px
+  );
+}
+
+.dark .transit-hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(56, 189, 248, 0.14),
+    rgba(56, 189, 248, 0.14) 6px,
+    rgba(14, 165, 233, 0.03) 6px,
+    rgba(14, 165, 233, 0.03) 12px
+  );
+}
+
+/* CSS 24h grid lines for TimetableView (replaces 168 DOM nodes with 1 GPU gradient) */
+.timetable-grid-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 47px,
+    rgba(255, 255, 255, 0.28) 47px,
+    rgba(255, 255, 255, 0.28) 48px
+  );
+}
+
+.dark .timetable-grid-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 47px,
+    rgba(125, 211, 252, 0.09) 47px,
+    rgba(125, 211, 252, 0.09) 48px
+  );
+}
+
+/* Zero-blur GPU specular surfaces for cards & lists */
+.ios-glass {
+  background: linear-gradient(
+    138deg,
+    rgba(255, 255, 255, var(--glass-alpha)) 0%,
+    rgba(219, 234, 254, var(--glass-alpha-low)) 64%,
+    rgba(186, 230, 253, var(--glass-alpha-low)) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-light));
+  box-shadow:
+    0 4px 12px rgba(29, 78, 216, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88);
+}
+
+.dark .ios-glass {
+  background: linear-gradient(
+    138deg,
+    rgba(20, 62, 152, var(--glass-dark-alpha)) 0%,
+    rgba(10, 34, 96, var(--glass-dark-alpha-low)) 64%,
+    rgba(8, 44, 108, var(--glass-dark-alpha-low)) 100%
+  );
+  border: 1px solid rgba(186, 230, 253, var(--glass-border-dark));
+  box-shadow:
+    0 6px 14px rgba(1, 8, 32, 0.30),
+    inset 0 1px 0 rgba(224, 242, 254, 0.32);
+}
+
+.ios-glass-strong {
+  background: linear-gradient(
+    142deg,
+    rgba(255, 255, 255, var(--glass-alpha)) 0%,
+    rgba(224, 242, 254, var(--glass-alpha-low)) 58%,
+    rgba(186, 230, 253, var(--glass-alpha-low)) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-light));
+  box-shadow:
+    0 8px 18px rgba(29, 78, 216, 0.09),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.94);
+}
+
+.dark .ios-glass-strong {
+  background: linear-gradient(
+    142deg,
+    rgba(24, 72, 168, var(--glass-dark-alpha)) 0%,
+    rgba(12, 38, 106, var(--glass-dark-alpha-low)) 60%,
+    rgba(10, 48, 114, var(--glass-dark-alpha-low)) 100%
+  );
+  border: 1px solid rgba(186, 230, 253, var(--glass-border-dark));
+  box-shadow:
+    0 8px 18px rgba(1, 8, 32, 0.36),
+    inset 0 1.5px 0 rgba(224, 242, 254, 0.36);
+}
+
+.ios-glass-tile {
+  background: linear-gradient(
+    152deg,
+    rgba(255, 255, 255, var(--glass-alpha)) 0%,
+    rgba(219, 234, 254, var(--glass-alpha-low)) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-light));
+  box-shadow:
+    0 4px 10px rgba(37, 99, 235, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.90);
+}
+
+.dark .ios-glass-tile {
+  background: linear-gradient(
+    152deg,
+    rgba(24, 70, 164, var(--glass-dark-alpha)) 0%,
+    rgba(12, 38, 102, var(--glass-dark-alpha-low)) 100%
+  );
+  border: 1px solid rgba(186, 230, 253, var(--glass-border-dark));
+  box-shadow:
+    0 6px 12px rgba(1, 8, 32, 0.28),
+    inset 0 1px 0 rgba(224, 242, 254, 0.32);
+}
+
+/* Subject-Tinted Cards connected directly to the 0–100% Transparency Slider */
+.ios-glass-subj-bio {
+  background: linear-gradient(
+    142deg,
+    rgba(236, 253, 245, var(--glass-subj-alpha)) 0%,
+    rgba(167, 243, 208, var(--glass-subj-alpha-low)) 100%
+  );
+  border: 1px solid rgba(52, 211, 153, 0.65);
+  box-shadow:
+    0 4px 12px rgba(16, 185, 129, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.dark .ios-glass-subj-bio {
+  background: linear-gradient(
+    142deg,
+    rgba(8, 92, 80, var(--glass-subj-alpha)) 0%,
+    rgba(6, 56, 72, var(--glass-subj-alpha-low)) 100%
+  );
+  border: 1px solid rgba(110, 231, 183, 0.42);
+  box-shadow:
+    0 6px 14px rgba(1, 8, 32, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.ios-glass-subj-phy {
+  background: linear-gradient(
+    142deg,
+    rgba(255, 247, 237, var(--glass-subj-alpha)) 0%,
+    rgba(254, 215, 170, var(--glass-subj-alpha-low)) 100%
+  );
+  border: 1px solid rgba(251, 146, 60, 0.65);
+  box-shadow:
+    0 4px 12px rgba(249, 115, 22, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.dark .ios-glass-subj-phy {
+  background: linear-gradient(
+    142deg,
+    rgba(104, 52, 30, var(--glass-subj-alpha)) 0%,
+    rgba(54, 30, 74, var(--glass-subj-alpha-low)) 100%
+  );
+  border: 1px solid rgba(253, 186, 116, 0.42);
+  box-shadow:
+    0 6px 14px rgba(1, 8, 32, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.ios-glass-subj-chem {
+  background: linear-gradient(
+    142deg,
+    rgba(239, 246, 255, var(--glass-subj-alpha)) 0%,
+    rgba(186, 230, 253, var(--glass-subj-alpha-low)) 100%
+  );
+  border: 1px solid rgba(56, 189, 248, 0.65);
+  box-shadow:
+    0 4px 12px rgba(59, 130, 246, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.dark .ios-glass-subj-chem {
+  background: linear-gradient(
+    142deg,
+    rgba(18, 68, 156, var(--glass-subj-alpha)) 0%,
+    rgba(10, 46, 112, var(--glass-subj-alpha-low)) 100%
+  );
+  border: 1px solid rgba(125, 211, 252, 0.42);
+  box-shadow:
+    0 6px 14px rgba(1, 8, 32, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+/* Floating Chrome: dynamically responds to 0–100% Transparency slider in BOTH modes */
+.ios-glass-topbar {
+  backdrop-filter: blur(10px) saturate(135%);
+  -webkit-backdrop-filter: blur(10px) saturate(135%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, var(--glass-chrome-light)) 0%,
+    rgba(219, 234, 254, var(--glass-chrome-light-low)) 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, var(--glass-border-light));
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.06);
+}
+
+.dark .ios-glass-topbar {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 32, 92, var(--glass-chrome-dark)) 0%,
+    rgba(6, 22, 68, var(--glass-chrome-dark-low)) 100%
+  );
+  border-bottom: 1px solid rgba(186, 230, 253, var(--glass-border-dark));
+  box-shadow: 0 4px 14px rgba(1, 8, 32, 0.32);
+}
+
+.ios-glass-dock {
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  background: linear-gradient(
+    142deg,
+    rgba(255, 255, 255, var(--glass-chrome-light)) 0%,
+    rgba(219, 234, 254, var(--glass-chrome-light-low)) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-light));
+  box-shadow:
+    0 8px 20px rgba(29, 78, 216, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.94);
+}
+
+.dark .ios-glass-dock {
+  background: linear-gradient(
+    142deg,
+    rgba(16, 52, 128, var(--glass-chrome-dark)) 0%,
+    rgba(8, 28, 78, var(--glass-chrome-dark-low)) 100%
+  );
+  border: 1px solid rgba(186, 230, 253, var(--glass-border-dark));
+  box-shadow:
+    0 10px 22px rgba(1, 8, 32, 0.45),
+    inset 0 1px 0 rgba(224, 242, 254, 0.38);
+}
+
+.ios-glass-modal {
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  background: linear-gradient(
+    152deg,
+    rgba(244, 250, 255, var(--glass-modal-light)) 0%,
+    rgba(214, 234, 255, var(--glass-modal-light-low)) 58%,
+    rgba(186, 230, 253, var(--glass-modal-light-low)) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-light));
+  box-shadow:
+    0 14px 30px rgba(10, 42, 114, 0.22),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.96);
+}
+
+.dark .ios-glass-modal {
+  background: linear-gradient(
+    152deg,
+    rgba(14, 46, 120, var(--glass-modal-dark)) 0%,
+    rgba(6, 24, 72, var(--glass-modal-dark-low)) 58%,
+    rgba(5, 32, 84, var(--glass-modal-dark-low)) 100%
+  );
+  border: 1px solid rgba(186, 230, 253, var(--glass-border-dark));
+  box-shadow:
+    0 16px 34px rgba(1, 6, 28, 0.56),
+    inset 0 1.5px 0 rgba(224, 242, 254, 0.38);
+}
+
+.ios-glass-control {
+  background: linear-gradient(
+    138deg,
+    rgba(255, 255, 255, var(--glass-control-light)) 0%,
+    rgba(219, 234, 254, var(--glass-alpha-low)) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-light));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88);
+}
+
+.dark .ios-glass-control {
+  background: linear-gradient(
+    138deg,
+    rgba(28, 78, 168, var(--glass-control-dark)) 0%,
+    rgba(12, 38, 96, var(--glass-dark-alpha-low)) 100%
+  );
+  border: 1px solid rgba(186, 230, 253, var(--glass-border-dark));
+  box-shadow: inset 0 1px 0 rgba(224, 242, 254, 0.24);
+}
+
+/* =====================================================================
+ * MAXIMUM GALAXY A07 60FPS MODE (.a07-perf on <html>)
+ * Disables live scroll-frame GPU backdrop-filter blurs and idle pulses,
+ * while KEEPING full live transparency slider responsiveness!
+ * ===================================================================== */
+.a07-perf .ios-glass-topbar,
+.a07-perf .ios-glass-dock,
+.a07-perf .ios-glass-modal {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.a07-perf .animate-beacon,
+.a07-perf .animate-scanner-beam {
+  animation: none !important;
+}
+
+/* Instant GPU-composited bottom sheet entrance (replaces heavy JS spring + scale rasterization) */
+@keyframes sheetSlideIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-sheet-in {
+  animation: sheetSlideIn 140ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+/* =====================================================================
+ * AMBIENT KEYFRAMES (Paused automatically in a07-perf / Hidden tabs)
+ * ===================================================================== */
+
+@keyframes ribbonDriftA {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(28px, 20px, 0) scale(1.06);
+  }
+}
+
+@keyframes ribbonDriftB {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-24px, -18px, 0) scale(1.05);
+  }
+}
+
+@keyframes orbSpinCW {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbSpinCCW {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes crystalSweep {
+  0% {
+    transform: translate3d(-130%, 0, 0) skewX(-18deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(230%, 0, 0) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes scannerBeam {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(220%, 0, 0);
+  }
+}
+
+@keyframes pulseBeacon {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.38);
+    opacity: 0.45;
+  }
+}
+
+.animate-orb-a {
+  animation: ribbonDriftA 14s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-orb-b {
+  animation: ribbonDriftB 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-spin-cw {
+  animation: orbSpinCW 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-spin-ccw {
+  animation: orbSpinCCW 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-crystal-sweep {
+  animation: crystalSweep 720ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-scanner-beam {
+  animation: scannerBeam 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+.animate-beacon {
+  animation: pulseBeacon 2s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-orb-a,
+  .animate-orb-b,
+  .animate-spin-cw,
+  .animate-spin-ccw,
+  .animate-crystal-sweep,
+  .animate-scanner-beam,
+  .animate-beacon,
+  .animate-sheet-in {
+    animation: none !important;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
